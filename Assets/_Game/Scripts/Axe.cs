@@ -50,7 +50,7 @@ namespace _Game.Scripts
 
             int coefficient = toForward ? 1 : -1;
 
-            _model.DORotate(new Vector3(360 * coefficient, 0, 0), 0.2f, RotateMode.FastBeyond360)
+            _model.DOLocalRotate(new Vector3(360 * coefficient, 0, 0), 0.2f, RotateMode.FastBeyond360)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
         }
@@ -61,8 +61,11 @@ namespace _Game.Scripts
                 return;
 
             if (!other.gameObject.TryGetComponent(out Target _))
+            {
+                Destroy(gameObject);
                 return;
-
+            }
+                
             _canInteract = false;
             BounceToPoint();
         }

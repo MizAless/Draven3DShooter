@@ -8,8 +8,8 @@ public class Thrower : MonoBehaviour
     [SerializeField] private Axe _axePerfab;
     [SerializeField] private Transform _throwPoint;
     [SerializeField] private float _throwForce;
-    [SerializeField] private float _upEngle;
-
+    [SerializeField] private float _upAngle;
+    [SerializeField] private Camera _camera;
     private Animator _animator;
 
     private bool _isAttacking = false;
@@ -33,10 +33,36 @@ public class Thrower : MonoBehaviour
 
     public void OnThrow()
     {
-        var axe = Instantiate(_axePerfab, _throwPoint.position, Quaternion.identity);
+        Vector3 direction;
+
+        if (TryGetViewTarget(out Vector3 point))
+            direction = (point - transform.position).normalized;
+        else
+            direction = GetViewDirection();
+
+        var axe = Instantiate(_axePerfab, _throwPoint.position, transform.rotation);
         axe.Init(this);
-        axe.Launch(Quaternion.Euler(-_upEngle, 0, 0) * transform.forward, _throwForce);
+        axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);
         axe.Catched += AxeOnCatched;
+    }
+
+    private bool TryGetViewTarget(out Vector3 point)
+    {
+        var ray = _camera.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+
+        point = Vector3.zero;
+
+        if (!Physics.Raycast(ray, out RaycastHit hit))
+            return false;
+
+        point = hit.point;
+        return true;
+    }
+
+    private Vector3 GetViewDirection()
+    {
+        var ray = _camera.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
+        return ray.direction.normalized;
     }
 
     private void AxeOnCatched()

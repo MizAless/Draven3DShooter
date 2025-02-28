@@ -94,13 +94,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478300974857230811}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10362404, y: 0.007856548, z: -0.0006791925, w: -0.99458534}
-  m_LocalPosition: {x: 0.654119, y: 2.1554208, z: -1.8460214}
+  m_LocalRotation: {x: 0.0027790472, y: 0.08030648, z: -0.001312144, w: -0.9967655}
+  m_LocalPosition: {x: 1.04, y: 1.82, z: -2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6609695686882352193}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.305, y: -9.213, z: 0.175}
 --- !u!20 &2126684859430953654
 Camera:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -269,6 +269,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1e5dec71be68254e93433529f8a1229, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9138994771430820438}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1e5dec71be68254e93433529f8a1229, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2674063933184450393}
   m_SourcePrefab: {fileID: 100100000, guid: b1e5dec71be68254e93433529f8a1229, type: 3}
 --- !u!4 &3281680458068444018 stripped
 Transform:
@@ -317,6 +320,7 @@ MonoBehaviour:
   _throwPoint: {fileID: 3026720475126817731}
   _throwForce: 30
   _upEngle: 10
+  _camera: {fileID: 2126684859430953654}
 --- !u!114 &3839686595880653369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +346,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7113ddf817b42df9f7638416eef0367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2674063933184450393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5832596484767188731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ba05dc55ed4597b0dca99dfd514f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 2126684859430953654}
+  _target: {fileID: 6609695686882352193}
+  _sensitivity: 100
+  _maxAngle: 5
+  _minAngle: -15
 --- !u!4 &6609695686882352193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b1e5dec71be68254e93433529f8a1229, type: 3}

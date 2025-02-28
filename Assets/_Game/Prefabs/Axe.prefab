@@ -154,7 +154,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _bounceDuration: 1
-  _bounceHight: 3
+  _bounceHight: 4
   _catchTrigger: {fileID: 3980821957948311326, guid: efd4ba0faf0549441a414ebac889903d, type: 3}
 --- !u!1 &593279934307040974
 GameObject:
