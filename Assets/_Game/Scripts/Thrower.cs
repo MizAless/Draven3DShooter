@@ -34,7 +34,14 @@ public class Thrower : MonoBehaviour
     public void OnThrow()
     {
         var axe = Instantiate(_axePerfab, _throwPoint.position, Quaternion.identity);
+        axe.Init(this);
         axe.Launch(Quaternion.Euler(-_upEngle, 0, 0) * transform.forward, _throwForce);
+        axe.Catched += AxeOnCatched;
+    }
+
+    private void AxeOnCatched()
+    {
+        print("Axe Catched");
     }
 
     public void OnEndAttack()

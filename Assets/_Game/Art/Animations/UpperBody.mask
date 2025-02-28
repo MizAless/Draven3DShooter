@@ -1,0 +1,255 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Icosphere
+    m_Weight: 0
+  - m_Path: Mesh_0
+    m_Weight: 1
+  - m_Path: skinned_mesh
+    m_Weight: 1
+  - m_Path: skinned_mesh/BUFFBONE_GLB_CHANNEL_LOC
+    m_Weight: 1
+  - m_Path: skinned_mesh/BUFFBONE_GLB_CHANNEL_LOC/BUFFBONE_GLB_CHANNEL_LOC_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/BUFFBONE_GLB_GROUND_LOC
+    m_Weight: 1
+  - m_Path: skinned_mesh/BUFFBONE_GLB_GROUND_LOC/BUFFBONE_GLB_GROUND_LOC_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BUFFBONE_GLB_CENTER_LOC
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BUFFBONE_GLB_CENTER_LOC/C_BUFFBONE_GLB_CENTER_LOC_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BUFFBONE_GLB_LAYOUT_LOC
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BUFFBONE_GLB_LAYOUT_LOC/C_BUFFBONE_GLB_LAYOUT_LOC_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BuffBone_Glb_Overhead_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/C_BuffBone_Glb_Overhead_Loc/C_BuffBone_Glb_Overhead_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/front_cloth_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/front_cloth_1/front_cloth_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/front_cloth_1/front_cloth_2/front_cloth_3
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/front_cloth_1/front_cloth_2/front_cloth_3/front_cloth_3_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Front_Tassle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Front_Tassle_1/L_Front_Tassle_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_BuffBone_Glb_Foot_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_BuffBone_Glb_Foot_Loc/L_BuffBone_Glb_Foot_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_Foot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_Foot/L_Toe
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_Foot/L_Toe/L_Toe_z
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Hip/L_Knee/L_Foot/L_Toe/L_Toe_z/L_Toe_z_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Rear_Tassle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/L_Rear_Tassle_1/L_Rear_Tassle_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Front_Tassle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Front_Tassle_1/R_Front_Tassle_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_BuffBone_Glb_Foot_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_BuffBone_Glb_Foot_Loc/R_BuffBone_Glb_Foot_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_Foot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_Foot/R_Toe
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_Foot/R_Toe/R_Toe_z
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Hip/R_Knee/R_Foot/R_Toe/R_Toe_z/R_Toe_z_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Rear_Tassle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/R_Rear_Tassle_1/R_Rear_Tassle_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/Rear_Cloth_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Pelvis/Rear_Cloth_1/Rear_Cloth_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/C_BuffBone_Glb_Chest_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/C_BuffBone_Glb_Chest_Loc/C_BuffBone_Glb_Chest_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_BuffBone_Glb_Hand_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_BuffBone_Glb_Hand_Loc/L_BuffBone_Glb_Hand_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Index_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Index_1/L_Index_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Index_1/L_Index_2/L_Index_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Middle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Middle_1/L_Middle_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Middle_1/L_Middle_2/L_Middle_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Parenting_Hand_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Parenting_Hand_Loc/L_Parenting_Hand_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Pinky_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Pinky_1/L_Pinky_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Pinky_1/L_Pinky_2/L_Pinky_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Ring_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Ring_1/L_Ring_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Ring_1/L_Ring_2/L_Ring_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Thumb_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Thumb_1/L_Thumb_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Thumb_1/L_Thumb_2/L_Thumb_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Bot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Bot/BuiffBone_Cstm_L_Weapon_Bot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Bot/BuiffBone_Cstm_L_Weapon_Bot/BuiffBone_Cstm_L_Weapon_Bot_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Top
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Top/BuiffBone_Cstm_L_Weapon_Top
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/L_Shoulder/L_UpArm/L_ForeArm/L_Hand/L_Weapon/L_Weapon_Top/BuiffBone_Cstm_L_Weapon_Top/BuiffBone_Cstm_L_Weapon_Top_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/C_BuffBone_Glb_Head_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/C_BuffBone_Glb_Head_Loc/C_BuffBone_Glb_Head_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/Hair_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/Hair_1/Hair_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/Hair_1/Hair_2/Hair_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/Jaw
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/Neck/Head/Jaw/Jaw_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_BuffBone_Glb_Hand_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_BuffBone_Glb_Hand_Loc/R_BuffBone_Glb_Hand_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Index_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Index_1/R_Index_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Index_1/R_Index_2/R_Index_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Middle_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Middle_1/R_Middle_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Middle_1/R_Middle_2/R_Middle_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Parenting_Hand_Loc
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Parenting_Hand_Loc/R_Parenting_Hand_Loc_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Pinky_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Pinky_1/R_Pinky_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Pinky_1/R_Pinky_2/R_Pinky_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Ring_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Ring_1/R_Ring_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Ring_1/R_Ring_2/R_Ring_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Thumb_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Thumb_1/R_Thumb_2
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Thumb_1/R_Thumb_2/R_Thumb_2_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/Buffbone_Glb_Weapon_1
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/Buffbone_Glb_Weapon_1/Buffbone_Glb_Weapon_1_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Bot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Bot/BuiffBone_Cstm_R_Weapon_Bot
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Bot/BuiffBone_Cstm_R_Weapon_Bot/BuiffBone_Cstm_R_Weapon_Bot_end
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Top
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Top/BuiffBone_Cstm_R_Weapon_Top
+    m_Weight: 1
+  - m_Path: skinned_mesh/Root/Spine0/Spine/Chest/R_Shoulder/R_UpArm/R_ForeArm/R_Hand/R_Weapon/R_Weapon_Top/BuiffBone_Cstm_R_Weapon_Top/BuiffBone_Cstm_R_Weapon_Top_end
+    m_Weight: 1
