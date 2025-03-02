@@ -1,23 +1,18 @@
+using System;
 using _Game.Scripts;
 using UnityEngine;
 
 public class Thrower : MonoBehaviour
 {
-    private static readonly int IsAttacking = Animator.StringToHash(nameof(IsAttacking));
-
     [SerializeField] private Axe _axePerfab;
     [SerializeField] private Transform _throwPoint;
     [SerializeField] private float _throwForce;
     [SerializeField] private float _upAngle;
     [SerializeField] private Camera _camera;
-    private Animator _animator;
 
     private bool _isAttacking = false;
-
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    
+    public event Action Throwed;
 
     void Update()
     {
@@ -27,7 +22,7 @@ public class Thrower : MonoBehaviour
                 return;
 
             _isAttacking = true;
-            _animator.SetTrigger(IsAttacking);
+            Throwed?.Invoke();
         }
     }
 
