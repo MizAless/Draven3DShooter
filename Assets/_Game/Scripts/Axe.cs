@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
-using System.Diagnostics.Tracing;
 using UnityEngine;
 using DG.Tweening;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
 namespace _Game.Scripts
@@ -13,13 +10,14 @@ namespace _Game.Scripts
     {
         [SerializeField] private Transform _model;
 
-        [Header("Bounce")] 
-        [SerializeField] private AnimationCurve _bounceXTrajectory;
+        [Header("Bounce")] [SerializeField] private AnimationCurve _bounceXTrajectory;
         [SerializeField] private AnimationCurve _bounceYTrajectory;
         [SerializeField] private float _bounceDuration;
         [SerializeField] private float _bounceHight;
 
         [SerializeField] private CatchTrigger _catchTrigger;
+
+        [SerializeField] private DisappearingAxe _disappearingAxePrefab;
 
         private Rigidbody _rigidbody;
         private Thrower _thrower;
@@ -60,14 +58,23 @@ namespace _Game.Scripts
             if (!_canInteract)
                 return;
 
-            if (!other.gameObject.TryGetComponent(out Target _))
+            if (!other.gameObject.TryGetComponent(out Target target))
             {
+                var contact = other.contacts[0];
+                CreateDisappearingAxe(contact.point, contact.normal);
                 Destroy(gameObject);
                 return;
             }
-                
+
+            target.Hit();
             _canInteract = false;
             BounceToPoint();
+        }
+
+        private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
+        {
+            var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation); 
+            disappearingAxe.Init(normal);
         }
 
         private void BounceToPoint()
@@ -101,7 +108,7 @@ namespace _Game.Scripts
             transform.position += Vector3.up * (_bounceYTrajectory.Evaluate(1) * _bounceHight);
 
             Destroy(gameObject);
-            
+
             callback?.Invoke();
         }
 

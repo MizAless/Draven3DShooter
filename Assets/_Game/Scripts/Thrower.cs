@@ -36,10 +36,12 @@ public class Thrower : MonoBehaviour
         Vector3 direction;
 
         if (TryGetViewTarget(out Vector3 point))
-            direction = (point - transform.position).normalized;
+            direction = (point - _throwPoint.position).normalized;
         else
             direction = GetViewDirection();
 
+        Debug.DrawRay(_throwPoint.position, direction, Color.green, 2f);
+        
         var axe = Instantiate(_axePerfab, _throwPoint.position, transform.rotation);
         axe.Init(this);
         axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);
