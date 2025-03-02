@@ -805,14 +805,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2619177730892755667, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674063933184450393, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
-      propertyPath: _sensitivity
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 5832596484767188731, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
       propertyPath: m_Name
       value: draven
@@ -856,10 +848,6 @@ PrefabInstance:
     - target: {fileID: 6609695686882352193, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8467028670902023720, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
-      propertyPath: _upAngle
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

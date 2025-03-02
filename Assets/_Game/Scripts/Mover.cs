@@ -9,6 +9,8 @@ namespace _Game.Scripts
 
         public event Action<float> Moved;
 
+        public Vector2 MoveDirection { get; private set; }
+
         private void Update()
         {
             HandleInput();
@@ -19,15 +21,16 @@ namespace _Game.Scripts
             var horizontal = Input.GetAxisRaw("Horizontal");
             var vertical = Input.GetAxisRaw("Vertical");
 
-            Vector3 moveDirection = new Vector3(horizontal, 0, vertical);
+            MoveDirection = new Vector2(horizontal, vertical);
 
-            if (moveDirection == Vector3.zero)
+            if (MoveDirection == Vector2.zero)
                 return;
 
-            moveDirection.Normalize();
-            transform.position += transform.forward * (moveDirection.z * _speed * Time.deltaTime);
-            transform.position += transform.right * (moveDirection.x * _speed * Time.deltaTime);
-            
+            Debug.DrawRay(transform.position + Vector3.up * 1.5f, new Vector3(MoveDirection.x, 0, MoveDirection.y) * _speed, Color.red);
+            MoveDirection.Normalize();
+            transform.position += transform.forward * (MoveDirection.y * _speed * Time.deltaTime);
+            transform.position += transform.right * (MoveDirection.x * _speed * Time.deltaTime);
+
             Moved?.Invoke(vertical >= 0 ? 1 : -1);
         }
     }

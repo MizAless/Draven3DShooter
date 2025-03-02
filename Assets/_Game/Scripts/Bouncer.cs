@@ -2,10 +2,10 @@
 //
 // namespace _Game.Scripts
 // {
-//     
-//     
 //     public class Bouncer : MonoBehaviour
 //     {
+//         
+//         
 //         private void BounceToPoint()
 //         {
 //             StartRotate(false);

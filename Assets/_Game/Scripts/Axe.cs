@@ -20,7 +20,7 @@ namespace _Game.Scripts
         [SerializeField] private DisappearingAxe _disappearingAxePrefab;
 
         private Rigidbody _rigidbody;
-        private Thrower _thrower;
+        private Mover _mover;
 
         private bool _canInteract = true;
 
@@ -31,9 +31,9 @@ namespace _Game.Scripts
             _rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void Init(Thrower thrower)
+        public void Init(Mover mover)
         {
-            _thrower = thrower;
+            _mover = mover;
         }
 
         public void Launch(Vector3 direction, float force)
@@ -117,7 +117,7 @@ namespace _Game.Scripts
             var randomVector = Random.insideUnitCircle;
             var direction = new Vector3(randomVector.x, 0, randomVector.y) * 0f;
 
-            return _thrower.transform.position + direction;
+            return _mover.transform.position + direction;
         }
     }
 }

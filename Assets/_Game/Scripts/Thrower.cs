@@ -11,8 +11,13 @@ public class Thrower : MonoBehaviour
     [SerializeField] private Camera _camera;
 
     private bool _isAttacking = false;
-    
+    private Mover _mover;
     public event Action Throwed;
+
+    private void Awake()
+    {
+        _mover = GetComponent<Mover>();
+    }
 
     void Update()
     {
@@ -38,7 +43,7 @@ public class Thrower : MonoBehaviour
         Debug.DrawRay(_throwPoint.position, direction, Color.green, 2f);
         
         var axe = Instantiate(_axePerfab, _throwPoint.position, transform.rotation);
-        axe.Init(this);
+        axe.Init(_mover);
         axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);
         axe.Catched += AxeOnCatched;
     }
