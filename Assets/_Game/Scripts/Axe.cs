@@ -74,12 +74,6 @@ namespace _Game.Scripts
             BounceToPoint();
         }
 
-        private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
-        {
-            var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation);
-            disappearingAxe.Init(normal);
-        }
-
         private void BounceToPoint()
         {
             StartRotate(false);
@@ -90,11 +84,26 @@ namespace _Game.Scripts
 
             var endPoint = GetBouncePoint();
 
-            var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
+            Vector3 directionFromEndPoint = transform.position - endPoint;
+
+            Quaternion endRotation = Quaternion.LookRotation(directionFromEndPoint.normalized);
+            endRotation.eulerAngles = new Vector3(0, endRotation.eulerAngles.y, 0);
             
+            transform
+                .DORotateQuaternion(endRotation, 0.2f)
+                .SetEase(Ease.InOutQuad);
+            
+            var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
+
             CatchMarkProjection.Instance.SetMark(catchTrigger);
 
             StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
+        }
+
+        private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
+        {
+            var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation);
+            disappearingAxe.Init(normal);
         }
 
         private IEnumerator BounceCoroutine(Vector3 startPoint, Vector3 targetPoint, Action callback = null)
