@@ -155,6 +155,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   _bounceDuration: 1
   _bounceHight: 4
+  _maxRandomBounceOffset: 2
+  _moveBounceOffset: 4
   _catchTrigger: {fileID: 3980821957948311326, guid: efd4ba0faf0549441a414ebac889903d, type: 3}
   _disappearingAxePrefab: {fileID: 124060959013362263, guid: addbd833537c1e043aa15a79edd0b0ed, type: 3}
 --- !u!1 &593279934307040974

@@ -10,13 +10,16 @@ namespace _Game.Scripts
     {
         [SerializeField] private Transform _model;
 
-        [Header("Bounce")] [SerializeField] private AnimationCurve _bounceXTrajectory;
+        [Header("Bounce")]
+        [SerializeField] private AnimationCurve _bounceXTrajectory;
         [SerializeField] private AnimationCurve _bounceYTrajectory;
         [SerializeField] private float _bounceDuration;
         [SerializeField] private float _bounceHight;
-
+        [SerializeField] private float _maxRandomBounceOffset;
+        [SerializeField] private float _moveBounceOffset;
+        [Space]
         [SerializeField] private CatchTrigger _catchTrigger;
-
+        [Space]
         [SerializeField] private DisappearingAxe _disappearingAxePrefab;
 
         private Rigidbody _rigidbody;
@@ -73,7 +76,7 @@ namespace _Game.Scripts
 
         private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
         {
-            var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation); 
+            var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation);
             disappearingAxe.Init(normal);
         }
 
@@ -85,7 +88,7 @@ namespace _Game.Scripts
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.isKinematic = true;
 
-            var endPoint = GetRandomPoint();
+            var endPoint = GetBouncePoint();
 
             var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
 
@@ -112,10 +115,13 @@ namespace _Game.Scripts
             callback?.Invoke();
         }
 
-        private Vector3 GetRandomPoint()
+        private Vector3 GetBouncePoint()
         {
+            if (_mover.MoveDirection != Vector3.zero)
+                return _mover.transform.position + _mover.MoveDirection * _moveBounceOffset;
+            
             var randomVector = Random.insideUnitCircle;
-            var direction = new Vector3(randomVector.x, 0, randomVector.y) * 0f;
+            var direction = new Vector3(randomVector.x, 0, randomVector.y) * _maxRandomBounceOffset;
 
             return _mover.transform.position + direction;
         }

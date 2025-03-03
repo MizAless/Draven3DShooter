@@ -9,7 +9,7 @@ namespace _Game.Scripts
 
         public event Action<float> Moved;
 
-        public Vector2 MoveDirection { get; private set; }
+        public Vector3 MoveDirection { get; private set; }
 
         private void Update()
         {
@@ -21,15 +21,17 @@ namespace _Game.Scripts
             var horizontal = Input.GetAxisRaw("Horizontal");
             var vertical = Input.GetAxisRaw("Vertical");
 
-            MoveDirection = new Vector2(horizontal, vertical);
+            MoveDirection = transform.rotation * new Vector3(horizontal, 0, vertical);
 
-            if (MoveDirection == Vector2.zero)
+            if (MoveDirection == Vector3.zero)
                 return;
 
-            Debug.DrawRay(transform.position + Vector3.up * 1.5f, new Vector3(MoveDirection.x, 0, MoveDirection.y) * _speed, Color.red);
             MoveDirection.Normalize();
-            transform.position += transform.forward * (MoveDirection.y * _speed * Time.deltaTime);
-            transform.position += transform.right * (MoveDirection.x * _speed * Time.deltaTime);
+
+            Debug.DrawRay(transform.position + Vector3.up * 1.5f,
+                MoveDirection, Color.red);
+
+            transform.position += MoveDirection * (_speed * Time.deltaTime);
 
             Moved?.Invoke(vertical >= 0 ? 1 : -1);
         }
