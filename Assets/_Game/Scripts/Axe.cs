@@ -91,6 +91,8 @@ namespace _Game.Scripts
             var endPoint = GetBouncePoint();
 
             var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
+            
+            CatchMarkProjection.Instance.SetMark(catchTrigger);
 
             StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
         }

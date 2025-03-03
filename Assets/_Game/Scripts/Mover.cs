@@ -11,6 +11,11 @@ namespace _Game.Scripts
 
         public Vector3 MoveDirection { get; private set; }
 
+        private void Start()
+        {
+            CatchMarkProjection.Instance.SetMover(this);
+        }
+
         private void Update()
         {
             HandleInput();
