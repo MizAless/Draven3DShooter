@@ -10,17 +10,14 @@ namespace _Game.Scripts
     {
         [SerializeField] private Transform _model;
 
-        [Header("Bounce")]
-        [SerializeField] private AnimationCurve _bounceXTrajectory;
+        [Header("Bounce")] [SerializeField] private AnimationCurve _bounceXTrajectory;
         [SerializeField] private AnimationCurve _bounceYTrajectory;
         [SerializeField] private float _bounceDuration;
         [SerializeField] private float _bounceHight;
         [SerializeField] private float _maxRandomBounceOffset;
         [SerializeField] private float _moveBounceOffset;
-        [Space]
-        [SerializeField] private CatchTrigger _catchTrigger;
-        [Space]
-        [SerializeField] private DisappearingAxe _disappearingAxePrefab;
+        [Space] [SerializeField] private CatchTrigger _catchTrigger;
+        [Space] [SerializeField] private DisappearingAxe _disappearingAxePrefab;
 
         private Rigidbody _rigidbody;
         private Mover _mover;
@@ -61,14 +58,16 @@ namespace _Game.Scripts
             if (!_canInteract)
                 return;
 
+            var contact = other.contacts[0];
+            
             if (!other.gameObject.TryGetComponent(out Target target))
             {
-                var contact = other.contacts[0];
                 CreateDisappearingAxe(contact.point, contact.normal);
                 Destroy(gameObject);
                 return;
             }
 
+            EffectsCreator.Instance.CreateEmbers(contact.point);
             target.Hit();
             _canInteract = false;
             BounceToPoint();
@@ -88,11 +87,11 @@ namespace _Game.Scripts
 
             Quaternion endRotation = Quaternion.LookRotation(directionFromEndPoint.normalized);
             endRotation.eulerAngles = new Vector3(0, endRotation.eulerAngles.y, 0);
-            
+
             transform
                 .DORotateQuaternion(endRotation, 0.2f)
                 .SetEase(Ease.InOutQuad);
-            
+
             var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
 
             catchTrigger.Catched += AxeAmmunition.Instance.Add;
@@ -106,7 +105,7 @@ namespace _Game.Scripts
         {
             CreateDisappearingAxe(transform.position, Vector3.up);
         }
-        
+
         private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
         {
             var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation);
@@ -137,7 +136,7 @@ namespace _Game.Scripts
         {
             if (_mover.MoveDirection != Vector3.zero)
                 return _mover.transform.position + _mover.MoveDirection * _moveBounceOffset;
-            
+
             var randomVector = Random.insideUnitCircle;
             var direction = new Vector3(randomVector.x, 0, randomVector.y) * _maxRandomBounceOffset;
 
