@@ -5,7 +5,8 @@ using UnityEngine;
 public class Thrower : MonoBehaviour
 {
     [SerializeField] private Axe _axePerfab;
-    [SerializeField] private Transform _throwPoint;
+    [SerializeField] private Transform _throwPointL;
+    [SerializeField] private Transform _throwPointR;
     [SerializeField] private float _throwForce;
     [SerializeField] private float _upAngle;
     [SerializeField] private Camera _camera;
@@ -30,8 +31,9 @@ public class Thrower : MonoBehaviour
 
             if (!_axeAmmunition.TryGet())
                 return;
-            
+
             _isAttacking = true;
+            print(_axeAmmunition.CurrentCount);
             Throwed?.Invoke();
         }
     }
@@ -40,14 +42,16 @@ public class Thrower : MonoBehaviour
     {
         Vector3 direction;
 
+        Transform throwPoint = _axeAmmunition.CurrentCount == 1 ? _throwPointR : _throwPointL;
+
         if (TryGetViewTarget(out Vector3 point))
-            direction = (point - _throwPoint.position).normalized;
+            direction = (point - throwPoint.position).normalized;
         else
             direction = GetViewDirection();
 
-        Debug.DrawRay(_throwPoint.position, direction, Color.green, 2f);
-        
-        var axe = Instantiate(_axePerfab, _throwPoint.position, transform.rotation);
+        Debug.DrawRay(throwPoint.position, direction, Color.green, 2f);
+
+        var axe = Instantiate(_axePerfab, throwPoint.position, transform.rotation);
         axe.Init(_mover);
         axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);
         axe.Catched += AxeOnCatched;
