@@ -11,6 +11,7 @@ namespace _Game.Scripts
         
         private bool _haveCatcher = false;
         public event Action Catched;
+        public event Action Missed;
 
         public void Activate()
         {
@@ -24,11 +25,13 @@ namespace _Game.Scripts
                 var catchEffectMain = _catchEffect.main;
                 catchEffectMain.duration = _destroyDelay;
                 _catchEffect.Play();
-                
+
                 Catched?.Invoke();
-                
+
                 yield return new WaitForSeconds(_destroyDelay);
             }
+            else
+                Missed?.Invoke();
 
             OnEnd();
         }

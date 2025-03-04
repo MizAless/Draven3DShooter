@@ -96,11 +96,17 @@ namespace _Game.Scripts
             var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
 
             catchTrigger.Catched += AxeAmmunition.Instance.Add;
+            catchTrigger.Missed += CreateDisappearingAxe;
             CatchMarkProjection.Instance.SetMark(catchTrigger);
 
             StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
         }
 
+        private void CreateDisappearingAxe()
+        {
+            CreateDisappearingAxe(transform.position, Vector3.up);
+        }
+        
         private void CreateDisappearingAxe(Vector3 position, Vector3 normal)
         {
             var disappearingAxe = Instantiate(_disappearingAxePrefab, position, transform.rotation);
