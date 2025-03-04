@@ -29,11 +29,6 @@ namespace _Game.Scripts
         private void Start()
         {
             SetActiveVisual(false);
-
-            // _image.color = _color1;
-            // _image.DOColor(_color2, _blinkDuration)
-            //     .SetLoops(-1, LoopType.Yoyo) // Бесконечный цикл с переключением между цветами
-            //     .SetEase(Ease.Linear); // Линейное изменение цвета
         }
 
         public void SetMark(CatchTrigger mark)

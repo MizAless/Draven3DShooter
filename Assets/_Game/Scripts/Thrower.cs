@@ -12,11 +12,13 @@ public class Thrower : MonoBehaviour
 
     private bool _isAttacking = false;
     private Mover _mover;
+    private AxeAmmunition _axeAmmunition;
     public event Action Throwed;
 
     private void Awake()
     {
         _mover = GetComponent<Mover>();
+        _axeAmmunition = GetComponent<AxeAmmunition>();
     }
 
     void Update()
@@ -26,6 +28,9 @@ public class Thrower : MonoBehaviour
             if (_isAttacking)
                 return;
 
+            if (!_axeAmmunition.TryGet())
+                return;
+            
             _isAttacking = true;
             Throwed?.Invoke();
         }
