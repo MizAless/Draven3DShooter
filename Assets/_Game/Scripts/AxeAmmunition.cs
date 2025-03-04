@@ -15,15 +15,7 @@ namespace _Game.Scripts
         {
             Instance = this;
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Add();
-            }
-        }
-
+        
         public bool TryGet()
         {
             if (CurrentCount == 0)
