@@ -14,12 +14,14 @@ public class Thrower : MonoBehaviour
     private bool _isAttacking = false;
     private Mover _mover;
     private AxeAmmunition _axeAmmunition;
+    private ThrowerSound _throwerSound;
     public event Action Throwed;
 
     private void Awake()
     {
         _mover = GetComponent<Mover>();
         _axeAmmunition = GetComponent<AxeAmmunition>();
+        _throwerSound = GetComponent<ThrowerSound>();
     }
 
     void Update()
@@ -48,8 +50,9 @@ public class Thrower : MonoBehaviour
         else
             direction = GetViewDirection();
 
-        Debug.DrawRay(throwPoint.position, direction, Color.green, 2f);
 
+        _throwerSound.PlayThrowAxeSound();
+        
         var axe = Instantiate(_axePerfab, throwPoint.position, transform.rotation);
         axe.Init(_mover);
         axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);

@@ -21,6 +21,7 @@ namespace _Game.Scripts
 
         private Rigidbody _rigidbody;
         private Mover _mover;
+        private AxeSound _axeSound;
 
         private bool _canInteract = true;
 
@@ -29,6 +30,7 @@ namespace _Game.Scripts
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _axeSound = GetComponent<AxeSound>();
         }
 
         public void Init(Mover mover)
@@ -40,6 +42,7 @@ namespace _Game.Scripts
         {
             StartRotate();
             _rigidbody.AddForce(direction * force, ForceMode.Impulse);
+            _axeSound.PlaySpinAxeSound();
         }
 
         private void StartRotate(bool toForward = true)
@@ -57,6 +60,8 @@ namespace _Game.Scripts
         {
             if (!_canInteract)
                 return;
+            
+            _axeSound.PlayAxeHitSound();
 
             var contact = other.contacts[0];
             

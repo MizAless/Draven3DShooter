@@ -9,6 +9,7 @@ namespace _Game.Scripts
        [field: SerializeField] public float Cooldown;
        
        private AxeAmmunition _axeAmmunition;
+       private ThrowerSound _throwerSound;
        
        private bool _canActivate = true;
        
@@ -17,6 +18,7 @@ namespace _Game.Scripts
        private void Awake()
        {
            _axeAmmunition = GetComponent<AxeAmmunition>();
+           _throwerSound = GetComponent<ThrowerSound>();
        }
 
        private void Update()
@@ -32,6 +34,8 @@ namespace _Game.Scripts
            if (!_canActivate)
                return;
 
+           _throwerSound.PlayRefillSkillSound();
+           
            _canActivate = false;
            _axeAmmunition.Add();
            

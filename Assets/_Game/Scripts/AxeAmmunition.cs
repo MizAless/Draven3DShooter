@@ -10,6 +10,8 @@ namespace _Game.Scripts
         public int CurrentCount { get; private set; } = 0;
         
         public static AxeAmmunition Instance { get; private set; }
+        
+        public event Action Changed;
 
         private void Start()
         {
@@ -22,15 +24,19 @@ namespace _Game.Scripts
                 return false;
 
             CurrentCount--;
+            
+            Changed?.Invoke();
             return true;
         }
 
         public void Add()
         {
             CurrentCount++;
-            
+
             if (CurrentCount > _maxCount)
                 CurrentCount = _maxCount;
+            else
+                Changed?.Invoke();
         }
     }
 }
