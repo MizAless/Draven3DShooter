@@ -33,7 +33,6 @@ public class Thrower : MonoBehaviour
                 return;
 
             _isAttacking = true;
-            print(_axeAmmunition.CurrentCount);
             Throwed?.Invoke();
         }
     }

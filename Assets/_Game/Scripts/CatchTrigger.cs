@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace _Game.Scripts
         [SerializeField] private float _destroyDelay;
         
         private bool _haveCatcher = false;
+        public event Action Catched;
 
         public void Activate()
         {
@@ -22,6 +24,8 @@ namespace _Game.Scripts
                 var catchEffectMain = _catchEffect.main;
                 catchEffectMain.duration = _destroyDelay;
                 _catchEffect.Play();
+                
+                Catched?.Invoke();
                 
                 yield return new WaitForSeconds(_destroyDelay);
             }

@@ -95,6 +95,7 @@ namespace _Game.Scripts
             
             var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
 
+            catchTrigger.Catched += AxeAmmunition.Instance.Add;
             CatchMarkProjection.Instance.SetMark(catchTrigger);
 
             StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));

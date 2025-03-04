@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Game.Scripts
@@ -7,6 +8,13 @@ namespace _Game.Scripts
         private const int _maxCount = 2;
 
         public int CurrentCount { get; private set; } = 0;
+        
+        public static AxeAmmunition Instance { get; private set; }
+
+        private void Start()
+        {
+            Instance = this;
+        }
 
         private void Update()
         {
