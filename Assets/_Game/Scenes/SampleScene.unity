@@ -302,7 +302,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145781336}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -310,7 +310,7 @@ RectTransform:
   - {fileID: 2046194935}
   - {fileID: 1140555530}
   m_Father: {fileID: 1511891788}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -7004,9 +7004,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 168587000}
   _view: {fileID: 1511891787}
-  _maxWidth: 0.3
+  _widthSlider: {fileID: 145781338}
+  _maxWidth: 0.45
   _minWidth: 0.1
-  _maxDistance: 2
+  _maxDistance: 3
 --- !u!4 &1829954929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7517554837254037426, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}

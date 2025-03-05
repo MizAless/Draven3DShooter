@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Game.Scripts
 {
@@ -7,6 +8,8 @@ namespace _Game.Scripts
     {
         [SerializeField] private Camera _camera;
         [SerializeField] private GameObject _view;
+
+        [Header("Width")] [SerializeField] private Slider _widthSlider;
         [SerializeField, Range(0, 1)] private float _maxWidth = 0.3f;
         [SerializeField, Range(0, 1)] private float _minWidth = 0.1f;
         [SerializeField] private float _maxDistance = 2f;
@@ -14,10 +17,11 @@ namespace _Game.Scripts
 
         private Mover _mover;
         private CatchTrigger _mark;
+        private float _angleWidthOffset = 0;
 
         public static CatchMarkRadial Instance { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
             Instance = this;
         }
@@ -59,18 +63,23 @@ namespace _Game.Scripts
             direction.y = 0;
             direction.Normalize();
 
-            float angle = Mathf.Atan2(direction.x, direction.z); // X и Z
-
+            float angle = Mathf.Atan2(direction.x, direction.z);
             float angleDegrees = angle * Mathf.Rad2Deg;
 
-            angleDegrees = 180-angleDegrees; 
+            angleDegrees = 180 - angleDegrees;
+            angleDegrees += _angleWidthOffset;
 
             transform.rotation = Quaternion.Euler(0, 0, angleDegrees);
         }
 
         private void UpdateWidth()
         {
-            // throw new NotImplementedException();
+            float distance = Vector3.Distance(_mark.transform.position, _mover.transform.position);
+            float normalizedDistance = Mathf.Clamp01(distance / _maxDistance);
+            float impactCoefficient = 1 - normalizedDistance;
+            float width = Mathf.Lerp(_minWidth, _maxWidth, impactCoefficient);
+            _angleWidthOffset = width * 180f;
+            _widthSlider.value = width;
         }
 
         private void SetActiveVisual(bool isActive)
