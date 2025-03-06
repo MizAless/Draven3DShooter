@@ -13,7 +13,7 @@ namespace _Game.Scripts
 
         private void Start()
         {
-            CatchMarkProjection.Instance.SetMover(this);
+            // CatchMarkProjection.Instance.SetMover(this);
             CatchMarkRadial.Instance.SetMover(this);
         }
 

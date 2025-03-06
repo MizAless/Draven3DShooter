@@ -101,7 +101,7 @@ namespace _Game.Scripts
 
             catchTrigger.Catched += AxeAmmunition.Instance.Add;
             catchTrigger.Missed += CreateDisappearingAxe;
-            CatchMarkProjection.Instance.SetMark(catchTrigger);
+            // CatchMarkProjection.Instance.SetMark(catchTrigger);
             CatchMarkRadial.Instance.SetMark(catchTrigger);
 
             StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
