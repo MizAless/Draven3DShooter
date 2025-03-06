@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace _Game.Scripts
@@ -8,9 +9,20 @@ namespace _Game.Scripts
         
         public void PlaySpinAxeSound()
         {
-            _audioSource.clip = DravenSounds.Instance.SpinAxeSound;
-            _audioSource.loop = true;
-            _audioSource.Play();
+            // _audioSource.clip = DravenSounds.Instance.SpinAxeSound;
+            // _audioSource.loop = true;
+            // _audioSource.Play();
+
+            StartCoroutine(SpinSoundCoroutine());
+        }
+        
+        private IEnumerator SpinSoundCoroutine()
+        {
+            while (enabled)
+            {
+                _audioSource.PlayOneShot(DravenSounds.Instance.SpinAxeSound);
+                yield return new WaitForSeconds(1f);
+            }
         }
         
         public void PlayAxeHitSound()

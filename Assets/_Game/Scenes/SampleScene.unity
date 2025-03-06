@@ -773,6 +773,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSourceL: {fileID: 328412038}
   _audioSourceR: {fileID: 1075469465}
+--- !u!114 &555568970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555568951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adcf4ff692a4d66b2a231ac473110c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RefillSkillSound: {fileID: 8300000, guid: 66c7483f8c2fae7499836c120d23cfb3, type: 3}
+  ThrowAxeSound: {fileID: 8300000, guid: 9c400dfa99582ca46a426788e522555a, type: 3}
+  SpinAxeSound: {fileID: 8300000, guid: 1870c60c3eca02b4db024a0b05a8d256, type: 3}
+  AxeHitSound: {fileID: 8300000, guid: 89f6593fac2d1794fb6a9626fdcab1cc, type: 3}
+  CatchAxeSound: {fileID: 8300000, guid: 1d99ff4e6847590478be697f1d7aa587, type: 3}
+  AxeFlyAfterBounceSound: {fileID: 8300000, guid: f448c3b4b948099448d052416fada847, type: 3}
+  _audioSource: {fileID: 741174651}
 --- !u!1 &623478395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1072,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!82 &741174651 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1707624242699790958, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
+  m_PrefabInstance: {fileID: 5991595204386068343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742218329
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,56 +6851,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 56.272, y: 56.272}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1727315392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1727315394}
-  - component: {fileID: 1727315393}
-  m_Layer: 0
-  m_Name: DravenSounds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1727315393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727315392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adcf4ff692a4d66b2a231ac473110c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RefillSkillSound: {fileID: 8300000, guid: 66c7483f8c2fae7499836c120d23cfb3, type: 3}
-  ThrowAxeSound: {fileID: 8300000, guid: 9c400dfa99582ca46a426788e522555a, type: 3}
-  SpinAxeSound: {fileID: 8300000, guid: 1870c60c3eca02b4db024a0b05a8d256, type: 3}
-  AxeHitSound: {fileID: 8300000, guid: 89f6593fac2d1794fb6a9626fdcab1cc, type: 3}
-  CatchAxeSound: {fileID: 8300000, guid: 1d99ff4e6847590478be697f1d7aa587, type: 3}
-  AxeFlyAfterBounceSound: {fileID: 8300000, guid: f448c3b4b948099448d052416fada847, type: 3}
---- !u!4 &1727315394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727315392}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.783518, y: 1.3171275, z: 6.7450457}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1829505607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,7 +6905,7 @@ MonoBehaviour:
   _widthSlider: {fileID: 145781338}
   _maxWidth: 0.45
   _minWidth: 0.1
-  _maxDistance: 3
+  _maxDistance: 4
 --- !u!4 &1829954929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7517554837254037426, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
@@ -7329,6 +7303,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5832596484767188731, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
       insertIndex: -1
       addedObject: {fileID: 555568961}
+    - targetCorrespondingSourceObject: {fileID: 5832596484767188731, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 555568970}
   m_SourcePrefab: {fileID: 100100000, guid: ad2aa98da1b69514c859aa55f6ccfa30, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -7343,4 +7320,3 @@ SceneRoots:
   - {fileID: 1964957355}
   - {fileID: 1976963585}
   - {fileID: 1283129000}
-  - {fileID: 1727315394}

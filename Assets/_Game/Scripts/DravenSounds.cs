@@ -11,6 +11,8 @@ namespace _Game.Scripts
         [field: SerializeField] public AudioClip CatchAxeSound;
         [field: SerializeField] public AudioClip AxeFlyAfterBounceSound;
         
+        [SerializeField] private AudioSource _audioSource;
+        
         public static DravenSounds Instance { get; private set; }
 
         private void Start()
@@ -18,34 +20,10 @@ namespace _Game.Scripts
             Instance = this;
         }
         
-        public void PlayRefillSkillSound()
-        {
-            
-        }
-        
-        public void PlayThrowAxeSound()
-        {
-            
-        }
-        
-        public void PlaySpinAxeSound()
-        {
-            
-        }
-        
-        public void PlayAxeHitSound()
-        {
-            
-        }
-        
         public void PlayCatchAxeSound()
         {
-            
-        }
-        
-        public void PlayAxeFlyAfterBounceSound()
-        {
-            
+            _audioSource.pitch = Random.Range(0.9f, 1.1f);
+            _audioSource.PlayOneShot(DravenSounds.Instance.CatchAxeSound);
         }
     }
 }

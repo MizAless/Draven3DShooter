@@ -9,6 +9,8 @@ namespace _Game.Scripts
         [SerializeField] private ParticleSystem _catchEffect;
         [SerializeField] private float _destroyDelay;
         
+        private CatchTriggerSound _catchTriggerSound;
+        
         private bool _haveCatcher = false;
         public event Action Catched;
         public event Action Missed;
@@ -26,6 +28,8 @@ namespace _Game.Scripts
                 catchEffectMain.duration = _destroyDelay;
                 _catchEffect.Play();
 
+                DravenSounds.Instance.PlayCatchAxeSound();
+                
                 Catched?.Invoke();
 
                 yield return new WaitForSeconds(_destroyDelay);
