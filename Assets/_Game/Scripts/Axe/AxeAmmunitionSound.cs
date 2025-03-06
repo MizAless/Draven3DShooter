@@ -20,6 +20,8 @@ namespace _Game.Scripts
             _LSpin = new CycledSound(_audioSourceL, spinSound);
             _RSpin = new CycledSound(_audioSourceR, spinSound);
             
+            _audioSourceL.loop = true;
+            
             _axeAmmunition.Changed += OnChanged;
         }
 
@@ -41,6 +43,7 @@ namespace _Game.Scripts
             }
             else if (_axeAmmunition.CurrentCount == 1)
             {
+                // _audioSourceL.Play();
                 _LSpin.Play(this);
                 _RSpin.Stop();
             }
