@@ -15,7 +15,7 @@ namespace _Game.Scripts
         
         public static DravenSounds Instance { get; private set; }
 
-        private void Start()
+        private void Awake()    
         {
             Instance = this;
         }
