@@ -15,6 +15,7 @@ public class Thrower : MonoBehaviour
     private Mover _mover;
     private AxeAmmunition _axeAmmunition;
     private ThrowerSound _throwerSound;
+    
     public event Action Throwed;
 
     private void Awake()
@@ -50,13 +51,11 @@ public class Thrower : MonoBehaviour
         else
             direction = GetViewDirection();
 
-
         _throwerSound.PlayThrowAxeSound();
         
         var axe = Instantiate(_axePerfab, throwPoint.position, transform.rotation);
         axe.Init(_mover);
         axe.Launch(Quaternion.Euler(-_upAngle, 0, 0) * direction, _throwForce);
-        axe.Catched += AxeOnCatched;
     }
 
     private bool TryGetViewTarget(out Vector3 point)
@@ -76,11 +75,6 @@ public class Thrower : MonoBehaviour
     {
         var ray = _camera.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
         return ray.direction.normalized;
-    }
-
-    private void AxeOnCatched()
-    {
-        print("Axe Catched");
     }
 
     public void OnEndAttack()

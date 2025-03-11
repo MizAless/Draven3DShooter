@@ -5,7 +5,7 @@ namespace _Game.Scripts
 {
     public class AxeAmmunition : MonoBehaviour
     {
-        private const int _maxCount = 2;
+        private const int MaxCount = 2;
 
         public int CurrentCount { get; private set; } = 0;
         
@@ -33,8 +33,8 @@ namespace _Game.Scripts
         {
             CurrentCount++;
 
-            if (CurrentCount > _maxCount)
-                CurrentCount = _maxCount;
+            if (CurrentCount > MaxCount)
+                CurrentCount = MaxCount;
             else
                 Changed?.Invoke();
         }

@@ -97,7 +97,6 @@ namespace _Game.Scripts
             float edgeX = Mathf.Clamp(center.x + directionNormalized.x * maxX, 0, maxX);
             float edgeY = Mathf.Clamp(center.y + directionNormalized.y * maxY, 0, maxY);
 
-            // Учитываем pivot в центре Canvas
             return new Vector3(edgeX - Screen.width / 2, edgeY - Screen.height / 2, 0);
         }
 

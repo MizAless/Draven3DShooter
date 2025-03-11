@@ -25,8 +25,6 @@ namespace _Game.Scripts
 
         private bool _canInteract = true;
 
-        public event Action Catched;
-
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -81,30 +79,34 @@ namespace _Game.Scripts
         private void BounceToPoint()
         {
             StartRotate(false);
-
-            GetComponent<Collider>().isTrigger = true;
-            _rigidbody.velocity = Vector3.zero;
-            _rigidbody.isKinematic = true;
-
+            SetAsTrigger();
             var endPoint = GetBouncePoint();
+            Vector3 lookDirection = transform.position - endPoint;
+            LookAtTween(lookDirection);
 
-            Vector3 directionFromEndPoint = transform.position - endPoint;
+            var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
+            catchTrigger.Catched += AxeAmmunition.Instance.Add;
+            catchTrigger.Missed += CreateDisappearingAxe;
+            CatchMarkRadial.Instance.SetMark(catchTrigger);
 
-            Quaternion endRotation = Quaternion.LookRotation(directionFromEndPoint.normalized);
+            StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
+        }
+
+        private void LookAtTween(Vector3 lookDirection)
+        {
+            Quaternion endRotation = Quaternion.LookRotation(lookDirection.normalized);
             endRotation.eulerAngles = new Vector3(0, endRotation.eulerAngles.y, 0);
 
             transform
                 .DORotateQuaternion(endRotation, 0.2f)
                 .SetEase(Ease.InOutQuad);
+        }
 
-            var catchTrigger = Instantiate(_catchTrigger, endPoint, Quaternion.identity);
-
-            catchTrigger.Catched += AxeAmmunition.Instance.Add;
-            catchTrigger.Missed += CreateDisappearingAxe;
-            // CatchMarkProjection.Instance.SetMark(catchTrigger);
-            CatchMarkRadial.Instance.SetMark(catchTrigger);
-
-            StartCoroutine(BounceCoroutine(transform.position, endPoint, () => catchTrigger.Activate()));
+        private void SetAsTrigger()
+        {
+            GetComponent<Collider>().isTrigger = true;
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.isKinematic = true;
         }
 
         private void CreateDisappearingAxe()
